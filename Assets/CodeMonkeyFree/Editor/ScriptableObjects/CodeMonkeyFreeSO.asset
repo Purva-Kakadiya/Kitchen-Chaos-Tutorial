@@ -14,40 +14,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.01
   subtype: kitchenchaos
-  lastShownTimestamp: 1776181880
+  lastShownTimestamp: 1780993922
   lastUpdateResponse:
     version: 1.01
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1776181880
+  checkedLastUpdateTimestamp: 1780993923
   lastQOTDResponse:
-    questionId: 291
-    questionText: The Profiler is useful for...
-    answerA: Balancing difficulty
-    answerB: Level Design
-    answerC: Indentifying performance bottlenecks
-    answerD: 
+    questionId: 310
+    questionText: How should you store the health of each unit in your game?
+    answerA: public int health;
+    answerB: private int health;
+    answerC: public static int health;
+    answerD: private int h;
     answerE: 
-  lastQotdTimestamp: 1776181880
+  lastQotdTimestamp: 1780993923
   lastDynamicHeaderResponse:
-    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/codeMonkeyToolkit50Off.png
-    topText: My Toolkit is 50% OFF! 40+ Tools and Elements to help you make games
-      BETTER and FASTER!
-    topLink: toolkit
+    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/humbleJun26Synty.png
+    topText: Synty is BACK with a HumbleBundle 95% OFF! Don't miss this one!
+    topLink: humblebundle
     bottomText: My 10+ Years of C# Knowledge in 1 Course!
     bottomLink: csharpcourse
-  lastDynamicHeaderTimestamp: 1776181880
+  lastDynamicHeaderTimestamp: 1780993923
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1776181880
+  websiteLatestMessageTimestamp: 1780993923
   websiteLatestVideos:
     videos:
-    - youTubeId: IkYt5CqoAoY
-      title: TOOLS to help you make games BETTER and FASTER!
-    - youTubeId: MYDfoKJ6-dw
-      title: Will this engine COMPETE with Unity?
-    - youTubeId: 1GzNFSVk63M
-      title: TOP 10 NEW Games, Made with Unity! (MARCH 2026)
-    - youTubeId: nL-_srwBYdU
-      title: Can you solve this Game Dev Challenge?
-  websiteLatestVideosTimestamp: 1776181880
+    - youTubeId: m0s3IUrWzVQ
+      title: How to Write High Quality Code that doesn't fall apart.
+    - youTubeId: NZfIxeK463o
+      title: Steam update just DESTROYED indie devs?!
+    - youTubeId: AuT-paQSAHU
+      title: NEW HOTTEST Steam Game Genres Revealed!
+    - youTubeId: 7s7rmNeo8Wo
+      title: Getting Started with Unity AI!
+  websiteLatestVideosTimestamp: 1780993923
