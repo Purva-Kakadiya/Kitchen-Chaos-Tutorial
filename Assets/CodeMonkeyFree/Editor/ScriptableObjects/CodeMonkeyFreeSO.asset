@@ -14,39 +14,40 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentVersion: 1.01
   subtype: kitchenchaos
-  lastShownTimestamp: 1780993922
+  lastShownTimestamp: 1782029149
   lastUpdateResponse:
     version: 1.01
     versionUrl: https://unitycodemonkey.com
-  checkedLastUpdateTimestamp: 1780993923
+  checkedLastUpdateTimestamp: 1782029149
   lastQOTDResponse:
-    questionId: 310
-    questionText: How should you store the health of each unit in your game?
-    answerA: public int health;
-    answerB: private int health;
-    answerC: public static int health;
-    answerD: private int h;
+    questionId: 314
+    questionText: The Profiler is useful for...
+    answerA: Balancing difficulty
+    answerB: Level Design
+    answerC: Indentifying performance bottlenecks
+    answerD: 
     answerE: 
-  lastQotdTimestamp: 1780993923
+  lastQotdTimestamp: 1782029149
   lastDynamicHeaderResponse:
-    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/humbleJun26Synty.png
-    topText: Synty is BACK with a HumbleBundle 95% OFF! Don't miss this one!
-    topLink: humblebundle
-    bottomText: My 10+ Years of C# Knowledge in 1 Course!
-    bottomLink: csharpcourse
-  lastDynamicHeaderTimestamp: 1780993923
+    topImageUrl: https://codemonkeyexternal.blob.core.windows.net/external/Misc/summer2025CodeMonkeyBundle.png
+    topText: Get 80% OFF on ALL my Courses and Games!!!
+    topLink: summerbundle
+    bottomText: DONT MISS the latest important trends, sign up for my FREE Weekly
+      Newsletter!
+    bottomLink: gamedevreport
+  lastDynamicHeaderTimestamp: 1782029149
   websiteLatestMessage:
     text: <a href="https://cmonkey.co/freecourses">Check out all my FREE courses!
       Click here!</a>
-  websiteLatestMessageTimestamp: 1780993923
+  websiteLatestMessageTimestamp: 1782029149
   websiteLatestVideos:
     videos:
-    - youTubeId: m0s3IUrWzVQ
-      title: How to Write High Quality Code that doesn't fall apart.
-    - youTubeId: NZfIxeK463o
-      title: Steam update just DESTROYED indie devs?!
-    - youTubeId: AuT-paQSAHU
-      title: NEW HOTTEST Steam Game Genres Revealed!
-    - youTubeId: 7s7rmNeo8Wo
-      title: Getting Started with Unity AI!
-  websiteLatestVideosTimestamp: 1780993923
+    - youTubeId: l8haAb6CPCI
+      title: AWESOME Bundle 80% OFF for Beginners and Intermediates!
+    - youTubeId: tEmH8kAvGgk
+      title: Unity 6.5 is OUT!
+    - youTubeId: H36i5K3tTy8
+      title: TOP 10 NEW Games, Made with Unity! (MAY 2026)
+    - youTubeId: NYBe2xkcscA
+      title: Unity Summer Sale is live up to 90% OFF!
+  websiteLatestVideosTimestamp: 1782029149
