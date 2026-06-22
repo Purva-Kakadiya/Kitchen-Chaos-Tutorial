@@ -6,6 +6,8 @@ using UnityEngine;
 public class DeliveryManager : MonoBehaviour {
     public event EventHandler OnRecipeSpawn;
     public event EventHandler OnRecipeComplete;
+    public event EventHandler OnRecipeSuccess;
+    public event EventHandler OnRecipeFailed;
 
     public static DeliveryManager Instance { get; private set; }
 
@@ -63,12 +65,13 @@ public class DeliveryManager : MonoBehaviour {
                     waitingRecipeSOList.RemoveAt(i);
 
                     OnRecipeComplete?.Invoke(this, EventArgs.Empty);
+                    OnRecipeSuccess?.Invoke(this, EventArgs.Empty);
                     return;
                 }
             }
         }
 
-        Debug.Log("Player Delivered Wrong Recipe!");
+        OnRecipeFailed?.Invoke(this, EventArgs.Empty);
     }
 
     public List<RecipeSO> GetWaitingRecipeSOList() {
