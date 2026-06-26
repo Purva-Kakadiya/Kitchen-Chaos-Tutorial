@@ -3,9 +3,13 @@ using UnityEngine;
 
 public class CuttingCounter : BaseCounter, IHasProgress {
 
-    [SerializeField] private CuttingRecipeSO[] cuttingRecipeSOArray;
-
     public static event EventHandler OnAnyCut;
+
+    new public static void ResetStaticData() {
+        OnAnyCut = null;
+    }
+
+    [SerializeField] private CuttingRecipeSO[] cuttingRecipeSOArray;
 
     public event EventHandler<IHasProgress.OnProgressBarChangedEventArgs> OnProgressBarChanged;
     public event EventHandler OnCut;
