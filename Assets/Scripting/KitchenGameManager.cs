@@ -100,9 +100,13 @@ public class KitchenGameManager : MonoBehaviour {
 
             OnGamePaused?.Invoke(this, EventArgs.Empty);
         } else {
-            Time.timeScale = 1f;
+            if (!OptionsUI.Instance.IsOptionMenuActive()) {
+                Time.timeScale = 1f;
 
-            OnGameUnpaused?.Invoke(this, EventArgs.Empty);
+                OnGameUnpaused?.Invoke(this, EventArgs.Empty);
+            } else {
+                OptionsUI.Instance.Hide();
+            }
         }
     }
 

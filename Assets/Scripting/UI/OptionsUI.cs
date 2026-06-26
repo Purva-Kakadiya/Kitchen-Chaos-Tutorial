@@ -12,6 +12,8 @@ public class OptionsUI : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI soundEffectText;
     [SerializeField] private TextMeshProUGUI musicText;
 
+    private bool isOptionMenuActive = false;
+
     private void Awake() {
         Instance = this;
 
@@ -31,13 +33,8 @@ public class OptionsUI : MonoBehaviour {
     }
 
     private void Start() {
-        KitchenGameManager.Instance.OnGameUnpaused += KitchenGameManager_OnGameUnpaused;
 
         UpdateVisual();
-        Hide();
-    }
-
-    private void KitchenGameManager_OnGameUnpaused(object sender, System.EventArgs e) {
         Hide();
     }
 
@@ -47,11 +44,19 @@ public class OptionsUI : MonoBehaviour {
     }
 
     public void Show() {
+        GamePausedUI.Instance.Hide();
+        isOptionMenuActive = true;
         gameObject.SetActive(true);
     }
 
-    private void Hide() {
+    public void Hide() {
+        GamePausedUI.Instance.Show();
+        isOptionMenuActive = false;
         gameObject.SetActive(false);
+    }
+
+    public bool IsOptionMenuActive() {
+        return isOptionMenuActive;
     }
 
 }
