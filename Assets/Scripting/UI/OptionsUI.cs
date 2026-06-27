@@ -20,6 +20,10 @@ public class OptionsUI : MonoBehaviour {
     [SerializeField] private Button interactAlternateButton;
     [SerializeField] private Button pauseButton;
 
+    [SerializeField] private Button gamePadInteractButton;
+    [SerializeField] private Button gamePadInteractAlternateButton;
+    [SerializeField] private Button gamePadPauseButton;
+
     [SerializeField] private TextMeshProUGUI moveUpText;
     [SerializeField] private TextMeshProUGUI moveDownText;
     [SerializeField] private TextMeshProUGUI moveLeftText;
@@ -28,13 +32,21 @@ public class OptionsUI : MonoBehaviour {
     [SerializeField] private TextMeshProUGUI interactAlternateText;
     [SerializeField] private TextMeshProUGUI pauseText;
 
-    [SerializeField] private Image moveUpRebind;
-    [SerializeField] private Image moveDownRebind;
-    [SerializeField] private Image moveLeftRebind;
-    [SerializeField] private Image moveRightRebind;
-    [SerializeField] private Image interactRebind;
-    [SerializeField] private Image interactAlternateRebind;
-    [SerializeField] private Image pauseRebind;
+    [SerializeField] private TextMeshProUGUI gamePadInteractText;
+    [SerializeField] private TextMeshProUGUI gamePadInteractAlternateText;
+    [SerializeField] private TextMeshProUGUI gamePadPauseText;
+
+    [SerializeField] private Image moveUpRebindImage;
+    [SerializeField] private Image moveDownRebindImage;
+    [SerializeField] private Image moveLeftRebindImage;
+    [SerializeField] private Image moveRightRebindImage;
+    [SerializeField] private Image interactRebindImage;
+    [SerializeField] private Image interactAlternateRebindImage;
+    [SerializeField] private Image pauseRebindImage;
+
+    [SerializeField] private Image gamePadInteractRebindImage;
+    [SerializeField] private Image gamePadInteractAlternateRebindImage;
+    [SerializeField] private Image gamePadPauseRebindImage;
 
     private bool isOptionMenuActive = false;
 
@@ -74,18 +86,31 @@ public class OptionsUI : MonoBehaviour {
         pauseButton.onClick.AddListener(() => {
             RebindBinding(GameInput.Binding.Pause);
         });
+        gamePadInteractButton.onClick.AddListener(() => {
+            RebindBinding(GameInput.Binding.GamePad_Interact);
+        });
+        gamePadInteractAlternateButton.onClick.AddListener(() => {
+            RebindBinding(GameInput.Binding.GamePad_InteractAlternate);
+        });
+        gamePadPauseButton.onClick.AddListener(() => {
+            RebindBinding(GameInput.Binding.GamePad_Pause);
+        });
     }
 
     private void Start() {
 
         UpdateVisual();
-        HideRebindImage(moveUpRebind);
-        HideRebindImage(moveDownRebind);
-        HideRebindImage(moveLeftRebind);
-        HideRebindImage(moveRightRebind);
-        HideRebindImage(interactRebind);
-        HideRebindImage(interactAlternateRebind);
-        HideRebindImage(pauseRebind);
+        HideRebindImage(moveUpRebindImage);
+        HideRebindImage(moveDownRebindImage);
+        HideRebindImage(moveLeftRebindImage);
+        HideRebindImage(moveRightRebindImage);
+        HideRebindImage(interactRebindImage);
+        HideRebindImage(interactAlternateRebindImage);
+        HideRebindImage(pauseRebindImage);
+
+        HideRebindImage(gamePadInteractRebindImage);
+        HideRebindImage(gamePadInteractAlternateRebindImage);
+        HideRebindImage(gamePadPauseRebindImage);
         Hide();
     }
 
@@ -100,12 +125,18 @@ public class OptionsUI : MonoBehaviour {
         interactText.text = GameInput.Instance.GetBindingText(GameInput.Binding.Interact);
         interactAlternateText.text = GameInput.Instance.GetBindingText(GameInput.Binding.InteractAlternate);
         pauseText.text = GameInput.Instance.GetBindingText(GameInput.Binding.Pause);
+
+        gamePadInteractText.text = GameInput.Instance.GetBindingText(GameInput.Binding.GamePad_Interact);
+        gamePadInteractAlternateText.text = GameInput.Instance.GetBindingText(GameInput.Binding.GamePad_InteractAlternate);
+        gamePadPauseText.text = GameInput.Instance.GetBindingText(GameInput.Binding.GamePad_Pause);
     }
 
     public void Show() {
         GamePausedUI.Instance.Hide();
         isOptionMenuActive = true;
         gameObject.SetActive(true);
+
+        soundEffectButton.Select();
     }
 
     public void Hide() {
@@ -131,51 +162,72 @@ public class OptionsUI : MonoBehaviour {
         switch (binding) {
             default:
             case GameInput.Binding.Move_Up:
-                ShowRebindImage(moveUpRebind);
+                ShowRebindImage(moveUpRebindImage);
                 GameInput.Instance.RebindBinding(binding, () => { 
-                    HideRebindImage(moveUpRebind);
+                    HideRebindImage(moveUpRebindImage);
                     UpdateVisual();
                 });
                 break;
             case GameInput.Binding.Move_Down:
-                ShowRebindImage(moveDownRebind);
+                ShowRebindImage(moveDownRebindImage);
                 GameInput.Instance.RebindBinding(binding, () => {
-                    HideRebindImage(moveDownRebind);
+                    HideRebindImage(moveDownRebindImage);
                     UpdateVisual();
                 });
                 break;
             case GameInput.Binding.Move_Left:
-                ShowRebindImage(moveLeftRebind);
+                ShowRebindImage(moveLeftRebindImage);
                 GameInput.Instance.RebindBinding(binding, () => {
-                    HideRebindImage(moveLeftRebind);
+                    HideRebindImage(moveLeftRebindImage);
                     UpdateVisual();
                 });
                 break;
             case GameInput.Binding.Move_Right:
-                ShowRebindImage(moveRightRebind);
+                ShowRebindImage(moveRightRebindImage);
                 GameInput.Instance.RebindBinding(binding, () => {
-                    HideRebindImage(moveRightRebind);
+                    HideRebindImage(moveRightRebindImage);
                     UpdateVisual();
                 });
                 break;
             case GameInput.Binding.Interact:
-                ShowRebindImage(interactRebind);
+                ShowRebindImage(interactRebindImage);
                 GameInput.Instance.RebindBinding(binding, () => {
-                    HideRebindImage(interactRebind);
+                    HideRebindImage(interactRebindImage);
                     UpdateVisual();
                 });
                 break;
             case GameInput.Binding.InteractAlternate:
-                ShowRebindImage(interactAlternateRebind);
+                ShowRebindImage(interactAlternateRebindImage);
                 GameInput.Instance.RebindBinding(binding, () => {
-                    HideRebindImage(interactAlternateRebind);
+                    HideRebindImage(interactAlternateRebindImage);
                     UpdateVisual();
                 });
                 break;
             case GameInput.Binding.Pause:
-                ShowRebindImage(pauseRebind);
+                ShowRebindImage(pauseRebindImage);
                 GameInput.Instance.RebindBinding(binding, () => {
-                    HideRebindImage(pauseRebind);
+                    HideRebindImage(pauseRebindImage);
+                    UpdateVisual();
+                });
+                break;
+            case GameInput.Binding.GamePad_Interact:
+                ShowRebindImage(gamePadInteractRebindImage);
+                GameInput.Instance.RebindBinding(binding, () => {
+                    HideRebindImage(gamePadInteractRebindImage);
+                    UpdateVisual();
+                });
+                break;
+            case GameInput.Binding.GamePad_InteractAlternate:
+                ShowRebindImage(gamePadInteractAlternateRebindImage);
+                GameInput.Instance.RebindBinding(binding, () => {
+                    HideRebindImage(gamePadInteractAlternateRebindImage);
+                    UpdateVisual();
+                });
+                break;
+            case GameInput.Binding.GamePad_Pause:
+                ShowRebindImage(gamePadPauseRebindImage);
+                GameInput.Instance.RebindBinding(binding, () => {
+                    HideRebindImage(gamePadPauseRebindImage);
                     UpdateVisual();
                 });
                 break;
